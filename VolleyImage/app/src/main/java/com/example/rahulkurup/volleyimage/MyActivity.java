@@ -138,6 +138,8 @@ public class MyActivity extends Activity implements AdapterView.OnItemSelectedLi
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+       tv.setText("");
        url = parent.getItemAtPosition(position).toString();
        String[] spinnerUrl = url.split("id=",2);
         Toast.makeText(MyActivity.this,
@@ -183,7 +185,7 @@ public class MyActivity extends Activity implements AdapterView.OnItemSelectedLi
         protected void onPostExecute(Void voids) {
             Log.i("Async-Example", "onPostExecute Called");
             progressBar.setVisibility(View.INVISIBLE);
-            tv.setText("On completion of the process,folders with respective package names will appear on your internal Storage.Screenshots will be saved there. The process has now completed. Check the Folder.");
+            tv.setText("The process has now completed. Check for the folder on storage.");
             super.onPostExecute(voids);
 
         }
